@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrangeiro</title>
+</head>
+<body>
+    <h1>Nacionalidade</h1>
+    Nome: <input type="text" id="nome" name="nome">
+    Nacionalidade: <input type="text" name="nacionalidade" id="nacionalidade">
+    <input type="button" value="Calcular" id="verificar" onclick="Responder()">
+    <div id="res">Resultado: </div> 
+
+    <script>
+
+        function Responder() {
+            var nacionalidade = document.getElementById("nacionalidade")
+            var calcular = document.getElementById("verificar")
+            var nome = document.getElementById("nome")
+            var res = document.getElementById("res")
+            var nac = String(nacionalidade.value)
+            var nam = String(nome.value)
+            res.innerHTML = `Resultado: Você ${nam} natural do país ${nac} é`
+
+            if(nac == "brasil"||nac == "Brasil"||nac == "BRASIL") {
+                res.innerHTML += `<strong> BRASILEIRO.</strong>`
+            }else {
+                res.innerHTML += `<strong> GRINGO.</strong>`
+            }
+            
+        }
+
+
+    </script>
+</body>
+</html>
